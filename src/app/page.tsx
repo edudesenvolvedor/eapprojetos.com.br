@@ -32,7 +32,12 @@ export default function Home() {
         <NavLink>Currículo</NavLink>
         <NavLink>Contato</NavLink>
       </Navbar>
-      <Aside />
+      <Aside
+        firstname={'Eduardo'}
+        lastname={'Pacheco'}
+        specialization={'Dev. Full-Stack'}
+        basedIn={'Pará, Brasil'}
+      />
     </>
   );
 }

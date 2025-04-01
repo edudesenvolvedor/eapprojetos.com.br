@@ -1,7 +1,14 @@
 import { LucideGithub, LucideInstagram, LucideZap, MessageSquareText, Users2 } from 'lucide-react';
 import { ButtonMotion } from '@/components/ButtonMotion';
 
-export const Aside = () => {
+interface IProps {
+  firstname: string;
+  lastname: string;
+  specialization: string;
+  basedIn: string;
+}
+
+export const Aside = ({ firstname, lastname, specialization, basedIn }: IProps) => {
   return (
     <>
       <div className="fixed border border-stroke-elements-light bg-base-light mx-4 rounded-xl space-y-4 p-8">
@@ -10,9 +17,9 @@ export const Aside = () => {
             <LucideZap size={30} className="text-accent-light" />
           </span>
           <span>
-            <span>Eduardo</span>
+            <span>{firstname}</span>
             <br />
-            <span>Pacheco</span>
+            <span>{lastname}</span>
           </span>
         </div>
         <div className="flex">
@@ -22,11 +29,11 @@ export const Aside = () => {
         </div>
         <div className="px-4">
           <div className="text-t-muted-light">Especialização:</div>
-          <div className="font-bold text-lg text-t-medium-light">Dev. Full-Stack</div>
+          <div className="font-bold text-lg text-t-medium-light">{specialization}</div>
         </div>
         <div className="px-4">
           <div className="text-t-muted-light">Localização:</div>
-          <div className="font-bold text-lg text-t-medium-light">Pará, Brasil</div>
+          <div className="font-bold text-lg text-t-medium-light">{basedIn}</div>
         </div>
         <div className="flex items-center justify-between px-4 *:hover:cursor-pointer">
           <button className="border border-stroke-elements-light p-3 rounded-3xl">
