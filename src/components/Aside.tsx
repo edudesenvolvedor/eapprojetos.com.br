@@ -11,7 +11,7 @@ interface IProps {
 export const Aside = ({ firstname, lastname, specialization, basedIn }: IProps) => {
   return (
     <>
-      <div className="fixed border border-stroke-elements-light bg-base-light mx-4 rounded-xl space-y-4 p-8">
+      <div className="fixed border border-stroke-elements-light bg-base-light mx-4 rounded-xl space-y-4 p-8 top-8">
         <div className="px-4 py-2 text-2xl font-extrabold text-gradient flex items-center space-x-3">
           <span className="p-3 border rounded-3xl border-accent-light">
             <LucideZap size={30} className="text-accent-light" />
