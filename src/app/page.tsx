@@ -3,6 +3,7 @@ import { MessageSquareText, Moon } from 'lucide-react';
 import { ButtonMotion } from '@/components/ButtonMotion';
 import Link from 'next/link';
 import { NavLink } from '@/components/Navlink';
+import { Aside } from '@/components/Aside';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         <NavLink>Currículo</NavLink>
         <NavLink>Contato</NavLink>
       </Navbar>
+      <Aside />
     </>
   );
 }
