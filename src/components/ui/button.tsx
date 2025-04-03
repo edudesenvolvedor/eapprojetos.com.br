@@ -19,8 +19,10 @@ const style = cva('cursor-pointer flex items-center space-x-2 font-semibold just
       light: 'bg-white text-gray-800 border border-gray-300',
       dark: 'bg-gray-800 text-white hover:bg-gray-900',
       link: 'text-blue-500 hover:underline',
-      outline: 'border border-stroke-controls-neutral-light text-t-bright-light rounded-full',
-      ghost: 'text-t-bright-light',
+      outline:
+        "relative border border-stroke-controls-neutral-light text-t-bright-light rounded-full before:content-[''] before:absolute before:rounded-full before:inset-0 before:w-full before:h-full before:backdrop-blur-sm before:z-[-1] hover:before:shadow-md",
+      ghost:
+        "relative text-t-bright-light before:content-[''] before:absolute before:rounded-full before:inset-0 before:w-full before:h-full before:backdrop-blur-sm before:z-[-1] hover:before:shadow-md hover:before:border hover:before:border-stroke-controls-neutral-light hover:rounded-full",
       glass:
         "p-3 relative before:content-[''] before:absolute before:rounded-full before:inset-0 before:w-full before:h-full before:backdrop-blur-sm before:z-[-1]",
     },
