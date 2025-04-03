@@ -21,11 +21,14 @@ const style = cva('cursor-pointer flex items-center space-x-2 font-semibold mx-a
       link: 'text-blue-500 hover:underline',
       outline: 'border border-stroke-controls-neutral-light text-t-bright-light',
       ghost: 'text-t-bright-light',
+      glass:
+        "p-3 relative before:content-[''] before:absolute before:rounded-full before:inset-0 before:w-full before:h-full before:backdrop-blur-sm before:z-[-1]",
     },
     size: {
       small: 'py-1 px-3 text-sm',
       medium: 'py-2 px-4 text-md',
       large: 'py-3 px-5 text-lg',
+      default: '',
     },
   },
   defaultVariants: {
