@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-base-light relative max-w-[2000px] mx-auto`}>
+      <body className={`antialiased bg-base-light relative`}>
         <AsideAvatar
           firstname={'Eduardo'}
           lastname={'Pacheco'}
@@ -56,7 +56,7 @@ export default function RootLayout({
           <Navlink>Contato</Navlink>
         </Navbar>
 
-        <div className="px-2 w-full lg:w-8/12 lg:mr-4 ml-auto xl:px-8 xl:mr-8 2xl:w-8/12  ">
+        <div className="px-2 w-full lg:w-8/12 lg:mr-4 ml-auto 2xl:mr-auto xl:px-8 xl:mr-8 2xl:w-auto 2xl:ml-[420px]">
           {children}
         </div>
       </body>

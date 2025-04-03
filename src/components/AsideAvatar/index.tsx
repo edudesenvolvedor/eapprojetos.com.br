@@ -12,7 +12,7 @@ interface IProps extends VariantProps<typeof style> {
 }
 
 const style = cva(
-  'mt-34 sm:mx-auto xl:mt-auto lg:fixed bg-base-tint-light border border-stroke-elements-light bg-base-light mx-4 rounded-xl space-y-4 p-2 md:p-8 lg:p-8 top-8 left-14 lg:left-4 lg:mt-18 xl:left-4 2xl:left-28 max-w-96 lg:max-w-72 xl:max-w-96',
+  'mt-34 sm:mx-auto xl:mt-auto lg:fixed bg-base-tint-light border border-stroke-elements-light bg-base-light mx-4 rounded-xl space-y-4 p-2 md:p-8 lg:p-8 top-8 left-14 lg:left-4 lg:mt-18 xl:left-4 2xl:left-10 max-w-96 lg:max-w-72 xl:max-w-96',
   {
     variants: {
       size: {
