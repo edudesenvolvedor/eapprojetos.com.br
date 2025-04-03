@@ -7,7 +7,7 @@ import { Timeline } from '@/components/Timeline';
 import { Milestone } from '@/components/Timeline/milestone';
 import InfoCard from '@/components/info-card';
 import IconCard from '@/components/icon-card';
-import { Section } from '@/components/Section';
+import { Section } from '@/components/section';
 import { KeyMetricCard } from '@/components/key-metric-card';
 import { Button } from '@/components/ui/button';
 import { ProjectCard } from '@/components/project-card';

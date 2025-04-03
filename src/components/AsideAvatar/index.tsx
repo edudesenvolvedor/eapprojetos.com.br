@@ -2,7 +2,7 @@ import { LucideGithub, LucideInstagram, LucideZap, MessageSquareText } from 'luc
 import { cva, type VariantProps } from 'class-variance-authority';
 import { FC } from 'react';
 import { Button } from '@/components/ui/button';
-import { Avatar } from '@/components/AsideAvatar/Avatar';
+import { Avatar } from '@/components/AsideAvatar/avatar';
 
 interface IProps extends VariantProps<typeof style> {
   firstname: string;
