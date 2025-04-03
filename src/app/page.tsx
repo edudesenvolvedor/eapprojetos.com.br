@@ -1,3 +1,7 @@
+import imgPortfolio1 from '@/assets/image/portfolio_1.png';
+import imgPortfolio2 from '@/assets/image/portfolio_2.png';
+import imgPortfolio3 from '@/assets/image/portfolio_3.png';
+import imgPortfolio4 from '@/assets/image/portfolio_4.png';
 import { Blocks, Download, LucideGithub, LucideInstagram, LucideTwitter, Send } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -85,12 +89,24 @@ export default function Home() {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <ProjectCard
             size={'full'}
-            imageUrl={'https://picsum.photos/1024/1024'}
-            labels={[{ text: 'Lorem' }, { text: 'Lorem' }]}
+            imageSrc={imgPortfolio1}
+            labels={[{ text: 'NextJs' }, { text: 'Web Design' }]}
           />
-          <ProjectCard size={'full'} imageUrl={'https://picsum.photos/1024/1024'} />
-          <ProjectCard size={'full'} imageUrl={'https://picsum.photos/1024/1024'} />
-          <ProjectCard size={'full'} imageUrl={'https://picsum.photos/1024/1024'} />
+          <ProjectCard
+            size={'full'}
+            imageSrc={imgPortfolio2}
+            labels={[{ text: 'NextJs' }, { text: 'Web Design' }]}
+          />
+          <ProjectCard
+            size={'full'}
+            imageSrc={imgPortfolio3}
+            labels={[{ text: 'NextJs' }, { text: 'Web Design' }]}
+          />
+          <ProjectCard
+            size={'full'}
+            imageSrc={imgPortfolio4}
+            labels={[{ text: 'NextJs' }, { text: 'Web Design' }]}
+          />
         </div>
       </Section>
 
@@ -144,27 +160,27 @@ export default function Home() {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-16">
           <InfoCard
             imageUrl={'https://picsum.photos/1024/1024'}
-            title="Frontend"
-            description="I work with HTML/CSS, Framer and WordPress."
-            labels={['frontend', 'backend']}
+            title="Front-End"
+            description="Desenvolvedor frontend com expertise em HTML, CSS, JavaScript e frameworks modernos como React. Crio interfaces dinâmicas e de alta performance para a web."
+            labels={['ReactJs', 'NextJs', 'Blade']}
           />
           <InfoCard
             imageUrl={'https://picsum.photos/1024/1024'}
-            title="Frontend"
-            description="I work with HTML/CSS, Framer and WordPress."
-            labels={['frontend', 'backend']}
+            title="Back-End"
+            description="Com expertise em linguagens como Python, Node.js, Java e bancos de dados como PostgreSQL, MySQL e MongoDB, desenvolvo soluções backend escaláveis e de alta performance."
+            labels={['NestJS', 'Express', 'NodeJS', 'Laravel']}
           />
           <InfoCard
             imageUrl={'https://picsum.photos/1024/1024'}
-            title="Frontend"
-            description="I work with HTML/CSS, Framer and WordPress."
-            labels={['frontend', 'backend']}
+            title="Apis"
+            description="Especialista no desenvolvimento de APIs robustas e eficientes. Crio soluções que permitem a comunicação e troca de dados entre diferentes sistemas e aplicações."
+            labels={['NestJS', 'Express', 'Laravel']}
           />
           <InfoCard
             imageUrl={'https://picsum.photos/1024/1024'}
-            title="Frontend"
-            description="I work with HTML/CSS, Framer and WordPress."
-            labels={['frontend', 'backend']}
+            title="Sistemas Personalizados"
+            description="Ofereço o desenvolvimento completo de sistemas personalizados, desde a análise de requisitos até a implementação e manutenção. Transformo suas ideias em software funcional e escalável."
+            labels={['Soluções', 'Automação']}
           />
         </div>
       </Section>

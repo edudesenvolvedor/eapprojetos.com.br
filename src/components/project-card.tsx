@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import Image, { StaticImageData } from 'next/image';
 
 interface IProps extends VariantProps<typeof cardStyles> {
-  imageUrl: string;
+  imageSrc: string | StaticImageData;
   labels?: { text: string; variant?: VariantProps<typeof labelStyles>['variant'] }[];
 }
 
-const cardStyles = cva('relative rounded-4xl overflow-hidden', {
+const cardStyles = cva('relative rounded-4xl overflow-hidden overflow-clip aspect-square', {
   variants: {
     size: {
       small: 'w-48 h-48',
@@ -33,10 +34,18 @@ const labelStyles = cva('bg-base-light py-2 px-4 rounded-2xl', {
   },
 });
 
-export const ProjectCard: FC<IProps> = ({ imageUrl, labels = [], size }: IProps) => {
+export const ProjectCard: FC<IProps> = ({ imageSrc, labels = [], size }: IProps) => {
   return (
     <div className={cardStyles({ size })}>
-      <img src={imageUrl} alt="Project" className="w-full h-full object-cover" />
+      {typeof imageSrc === 'object' ? (
+        <Image src={imageSrc} alt="" className="w-full h-full object-cover aspect-square" />
+      ) : (
+        <img
+          src={imageSrc as string}
+          alt="Project"
+          className="w-full h-full object-cover aspect-square"
+        />
+      )}
       <div className="absolute bottom-8 left-8 flex space-x-2">
         {labels.map((label, index) => (
           <div key={index} className={labelStyles({ variant: label.variant })}>
