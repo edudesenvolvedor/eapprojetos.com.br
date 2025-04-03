@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ReactNode } from 'react';
-import { Navbar } from '@/components/Navbar';
 import Link from 'next/link';
 import { MessageSquareText, Moon } from 'lucide-react';
-import { ButtonMotion } from '@/components/ButtonMotion';
-import { NavLink } from '@/components/Navlink';
-import { Aside } from '@/components/Aside';
+import { Navlink } from '@/components/Navbar/navlink';
+import { Button } from '@/components/ui/button';
+import { Navbar } from '@/components/Navbar';
+import { AsideAvatar } from '@/components/AsideAvatar';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-base-light`}>
-        <Aside
+      <body className={`antialiased bg-base-light relative max-w-[2000px] mx-auto`}>
+        <AsideAvatar
           firstname={'Eduardo'}
           lastname={'Pacheco'}
           specialization={'Dev. Full-Stack'}
@@ -29,30 +29,36 @@ export default function RootLayout({
         />
         <Navbar
           brand={
-            <Link href="/" className="text-gradient font-bold text-3xl ">
+            <Link href="/" className="text-gradient font-bold text-2xl md:text-3xl ">
               EAP Projetos
             </Link>
           }
           rightButton={
             <>
-              <button className="hidden xl:block p-2 text-t-disabled-light group cursor-pointer">
+              <Button variant={'glass'} size={'default'} className="">
                 <Moon className="group-hover:text-t-bright-light" />
-              </button>
-              <ButtonMotion>
-                <span>Vamos Conversa</span>
-                <MessageSquareText />
-              </ButtonMotion>
+              </Button>
+              <Button
+                variant={'primary'}
+                icon={<MessageSquareText />}
+                iconPosition={'right'}
+                size={'medium'}
+              >
+                Vamos Conversa
+              </Button>
             </>
           }
         >
-          <NavLink isActive>Início</NavLink>
-          <NavLink>Portfólio</NavLink>
-          <NavLink>Sobre Mim</NavLink>
-          <NavLink>Currículo</NavLink>
-          <NavLink>Contato</NavLink>
+          <Navlink isActive>Início</Navlink>
+          <Navlink>Portfólio</Navlink>
+          <Navlink className={'lg:hidden 2xl:block'}>Sobre Mim</Navlink>
+          <Navlink>Currículo</Navlink>
+          <Navlink>Contato</Navlink>
         </Navbar>
 
-        <div className="max-w-10/12 ml-auto mt-32 px-8">{children}</div>
+        <div className="px-2 w-full lg:w-8/12 lg:mr-4 ml-auto xl:px-8 xl:mr-8 2xl:w-8/12  ">
+          {children}
+        </div>
       </body>
     </html>
   );
