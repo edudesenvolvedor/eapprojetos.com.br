@@ -1,8 +1,11 @@
-import { LucideGithub, LucideInstagram, LucideZap, MessageSquareText } from 'lucide-react';
+'use client';
+
+import { LucideZap } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { FC } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar } from '@/components/AsideAvatar/avatar';
+import { ChatDots, GithubLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
 
 interface IProps extends VariantProps<typeof style> {
   firstname: string;
@@ -34,6 +37,21 @@ export const AsideAvatar: FC<IProps> = ({
   basedIn,
   size,
 }: IProps) => {
+  const links = [
+    {
+      icon: GithubLogo,
+      href: 'https://github.com/edudesenvolvedor',
+    },
+    {
+      icon: LinkedinLogo,
+      href: 'https://www.linkedin.com/in/edudesenvolvedor',
+    },
+    {
+      icon: WhatsappLogo,
+      href: 'https://wa.me/5591985561718?text=Ol%C3%A1!%20Vi%20o%20site%20da%20EAP%20Projetos%20e%20quero%20saber%20mais%20sobre%20como%20voc%C3%AA%20podem%20ajudar%20minha%20empresa%20com%20solu%C3%A7%C3%B5es%20de%20TI.',
+    },
+  ];
+
   return (
     <aside className={style({ size })}>
       <div className="px-4 py-2 text-2xl font-extrabold text-gradient flex items-center space-x-3">
@@ -57,16 +75,26 @@ export const AsideAvatar: FC<IProps> = ({
         <div className="font-bold text-lg text-t-medium-light">{basedIn}</div>
       </div>
       <div className="flex items-center justify-between px-4 *:hover:cursor-pointer">
-        {[LucideGithub, LucideZap, LucideInstagram].map((Icon, index) => (
-          <button key={index} className="border border-stroke-elements-light p-3 rounded-3xl">
-            <Icon />
-          </button>
+        {links.map((link, index) => (
+          <Button
+            as={'a'}
+            target={'_blank'}
+            href={link.href}
+            variant={'outline'}
+            size={'default'}
+            className={'p-3 text-lg lg:text-3xl rounded-xl before:rounded-xl'}
+            key={index}
+          >
+            <link.icon />
+          </Button>
         ))}
       </div>
       <div className="px-4">
         <Button
+          as={'a'}
+          href={'#contato'}
           className="w-full text-[11px] sm:text-lg lg:text-[10px] xl:text-lg text-center"
-          icon={<MessageSquareText />}
+          icon={<ChatDots className={'text-xl'} weight={'bold'} />}
           iconPosition="right"
         >
           Vamos Trabalhar Juntos!
