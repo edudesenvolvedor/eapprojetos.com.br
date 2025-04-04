@@ -1,8 +1,43 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@theme {
+  /* Light Theme */
+  --color-base-light: #e6ebf4;
+  --color-base-tint-light: #ebf0f7;
+  --color-base-shade-light: #bdc1c8;
+  --color-accent-light: #aa70e0;
+  --color-secondary-light: #7059e2;
+  --color-secondary-rgba-light: rgba(112, 89, 226, 0.3);
+  --color-stroke-controls-light: #a8b0c1;
+  --color-stroke-controls-neutral-light: rgba(0, 0, 0, 0.3);
+  --color-stroke-elements-light: #d1d5e0;
+  --color-t-bright-light: #22232c;
+  --color-t-medium-light: #424550;
+  --color-t-muted-light: #666a79;
+  --color-t-accent-light: #8f56cc;
+  --color-t-secondary-light: #5d4ec4;
+  --color-t-disabled-light: #717586;
+  --color-t-placeholder-light: #969bb2;
+  --color-base-opp-light: #111111;
+  --color-t-opp-bright-light: #ebf0f7;
+  --color-t-opp-medium-light: #c7c6d3;
+  --color-t-opp-muted-light: #a1a1af;
+  --color-gradient-one-light: #cec4ef;
+  --color-gradient-two-light: #f5c5cd;
+  --color-gradient-three-light: #ac8fe3;
 }
 
 @theme inline {
@@ -20,7 +55,17 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(
+      15deg,
+      var(--color-t-accent-light) 0%,
+      var(--color-t-secondary-light) 80%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
