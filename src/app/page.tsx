@@ -179,6 +179,9 @@ export default function Home() {
               Meus Trabalhos
             </Button>
             <Button
+              as={'a'}
+              target={'_blank'}
+              href={`${process.env.NEXT_PUBLIC_BASE_URL}/api/curriculo`}
               variant="ghost"
               icon={<Download />}
               iconPosition={'right'}
