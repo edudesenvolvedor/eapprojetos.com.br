@@ -29,7 +29,7 @@ export default function RootLayout({
         />
         <Navbar
           brand={
-            <Link href="/" className="text-gradient font-bold text-2xl md:text-3xl ">
+            <Link href="/#" className="text-gradient font-bold text-2xl md:text-3xl ">
               EAP Projetos
             </Link>
           }
@@ -49,11 +49,15 @@ export default function RootLayout({
             </>
           }
         >
-          <Navlink isActive>Início</Navlink>
-          <Navlink>Portfólio</Navlink>
-          <Navlink className={'lg:hidden 2xl:block'}>Sobre Mim</Navlink>
-          <Navlink>Currículo</Navlink>
-          <Navlink>Contato</Navlink>
+          <Navlink href={'/#inicio'} isActive>
+            Início
+          </Navlink>
+          <Navlink href={'/#portfolio'}>Portfólio</Navlink>
+          <Navlink href={'/#sobre-mim'} className={'lg:hidden 2xl:block'}>
+            Sobre Mim
+          </Navlink>
+          <Navlink href={'/#curriculo'}>Currículo</Navlink>
+          <Navlink href={'/#contato'}>Contato</Navlink>
         </Navbar>
 
         <div className="px-2 w-full lg:w-8/12 lg:mr-4 ml-auto 2xl:mr-auto xl:px-8 xl:mr-8 2xl:w-auto 2xl:ml-[420px]">
