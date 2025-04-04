@@ -18,6 +18,77 @@ import { ProjectCard } from '@/components/project-card';
 import GridDisplay from '@/components/grid-display';
 
 export default function Home() {
+  const myWorks = [
+    {
+      year: 'Jan/2024 – Até o momento',
+      title: 'EAP Projetos',
+      label: 'Freelancer',
+      description:
+        'Elaboração de projetos de telecomunicações focados em enlace e redes de acesso por rádio (RAN), unindo experiência em TI e telecomunicações para oferecer soluções integradas e eficientes.',
+    },
+    {
+      year: 'Ago/2023 - Ago/2024',
+      title: 'AFL Engenharia',
+      label: 'Coordenador de documentações',
+      description:
+        'Coordenei uma equipe responsável pela elaboração de projetos de remanejamento e instalação de equipamentos, incluindo Estações Rádio Base (ERB) e Rádio Enlace, para os principais fornecedores do mercado, como Nokia, Ericsson, ZTE, Huawei e NEC, atendendo às operadoras Claro, TIM e VIVO. Minha atuação abrangeu a supervisão do planejamento técnico, garantindo a conformidade com os padrões de qualidade e os prazos estabelecidos, além de assegurar a eficiência nos processos de implantação e integração dos novos equipamentos.',
+    },
+    {
+      year: 'Out/2022 – Ago/2023',
+      title: 'Engefix Telecom',
+      label: 'Analista de telecomunicações',
+      description:
+        'Supervisionei equipes em campo durante a elaboração de relatórios técnicos e o processo de instalação de equipamentos de telecomunicações ERBs no projeto da Ericsson para as operadoras TIM e VIVO. Atuei garantindo o cumprimento dos padrões de qualidade e segurança, assegurando a precisão nas documentações e a eficiência na instalação dos dispositivos, alinhando o trabalho da equipe aos requisitos do projeto e às expectativas dos clientes.',
+    },
+    {
+      year: 'Jul/2022 - Out/2022',
+      title: 'Engefix Telecom',
+      label: 'Estágio',
+      description:
+        'Estágio extra-curricular com duração de 3 meses junto ao Departamento de Qualidade',
+    },
+  ];
+
+  const myEducations = [
+    {
+      year: '2022 - Até o momento - (EAD)',
+      title: 'Barcharel em Engenharia de Software',
+      label: 'Faculdade Unopar',
+      description:
+        'Programação (diversas linguagens), estruturas de dados e algoritmos, design e arquitetura de software, bancos de dados, testes de software projetar, desenvolver e manter sistemas de software complexos.',
+    },
+
+    {
+      year: '2024 - 360h',
+      title: 'MBA em Gestão Empresarial',
+      label: 'Faculdade Anhanguera',
+      description:
+        'Estratégia empresarial, finanças e contabilidade, marketing e vendas, operações e logística, gestão de pessoas desenvolver liderança e visão estratégica para gerenciar negócios.',
+    },
+
+    {
+      year: '2023 - 360h',
+      title: 'Pós-Graduação em Desenvolvimento Full-Stack',
+      label: 'Faculdade Anhanguera',
+      description:
+        'Desenvolvimento front-end (HTML, CSS, JavaScript, React), desenvolvimento back-end (Java/Node.js, Spring/NestJS), bancos de dados (SQL e NoSQL) construir e gerenciar aplicações web completas.',
+    },
+    {
+      year: '2023 - 360h',
+      title: 'Pós-Graduação em Engenharia e Gestão de Projetos e Qualidade',
+      label: 'Faculdade Anhanguera',
+      description:
+        'Gestão da qualidade (ferramentas, normas, controle estatístico), gestão de projetos (planejamento, execução, controle) implementar e gerenciar projetos e sistemas de qualidade em engenharia.',
+    },
+    {
+      year: '2018 - 2022',
+      title: 'CST em Sistemas de Telecomunicações',
+      label: 'IFPA',
+      description:
+        'Redes de comunicação, transmissão de dados e infraestrutura de TIC implementar, gerenciar e manter sistemas de telecomunicações.',
+    },
+  ];
+
   const tools = [
     {
       name: 'Photoshop',
@@ -191,44 +262,14 @@ export default function Home() {
         }
       >
         <Timeline title="Minha Educação">
-          <Milestone
-            year="2015 - 2016"
-            title="Drawing Concentration"
-            institution="Course by New York Academy of Art"
-            description="Intensive drawing courses that present the fundamental principles of drawing."
-          />
-          <Milestone
-            year="2015 - 2016"
-            title="Drawing Concentration"
-            institution="Course by New York Academy of Art"
-            description="Intensive drawing courses that present the fundamental principles of drawing."
-          />
-          <Milestone
-            year="2015 - 2016"
-            title="Drawing Concentration"
-            institution="Course by New York Academy of Art"
-            description="Intensive drawing courses that present the fundamental principles of drawing."
-          />
+          {myEducations.map((milestone, index) => (
+            <Milestone key={index} {...milestone} />
+          ))}
         </Timeline>
         <Timeline title="Meus Trabalhos">
-          <Milestone
-            year="2015 - 2016"
-            title="Drawing Concentration"
-            institution="Course by New York Academy of Art"
-            description="Intensive drawing courses that present the fundamental principles of drawing."
-          />
-          <Milestone
-            year="2015 - 2016"
-            title="Drawing Concentration"
-            institution="Course by New York Academy of Art"
-            description="Intensive drawing courses that present the fundamental principles of drawing."
-          />
-          <Milestone
-            year="2015 - 2016"
-            title="Drawing Concentration"
-            institution="Course by New York Academy of Art"
-            description="Intensive drawing courses that present the fundamental principles of drawing."
-          />
+          {myWorks.map((work, index) => (
+            <Milestone key={index} {...work} />
+          ))}
         </Timeline>
         <GridDisplay title={'Minhas Ferramentas'} columns={'six'}>
           {tools.map((tool, index) => (
