@@ -41,7 +41,7 @@ export default function RootLayout({
               </Button>
               <Button
                 as={'a'}
-                href={'/#contato'}
+                href={'contato'}
                 variant={'primary'}
                 icon={<ChatDots />}
                 iconPosition={'right'}
@@ -53,15 +53,13 @@ export default function RootLayout({
             </>
           }
         >
-          <Navlink href={'/#inicio'} isActive>
-            Início
-          </Navlink>
-          <Navlink href={'/#portfolio'}>Portfólio</Navlink>
-          <Navlink href={'/#sobre-mim'} className={'lg:hidden 2xl:block'}>
+          <Navlink href={'inicio'}>Início</Navlink>
+          <Navlink href={'portfolio'}>Portfólio</Navlink>
+          <Navlink href={'sobre-mim'} className={'lg:hidden 2xl:block'}>
             Sobre Mim
           </Navlink>
-          <Navlink href={'/#curriculo'}>Currículo</Navlink>
-          <Navlink href={'/#contato'}>Contato</Navlink>
+          <Navlink href={'curriculo'}>Currículo</Navlink>
+          <Navlink href={'contato'}>Contato</Navlink>
         </Navbar>
 
         <div className="px-2 w-full lg:w-8/12 lg:mr-4 ml-auto 2xl:mr-auto xl:px-8 xl:mr-8 2xl:w-auto 2xl:ml-[420px]">

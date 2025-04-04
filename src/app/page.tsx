@@ -160,7 +160,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="lg:h-screen relative">
+      <section id={'inicio'} className="lg:h-screen relative">
         <div className="mt-34 lg:absolute lg:bottom-8 w-full">
           <Badge text="Vamos Conversar!" />
           <h2 className="text-gradient font-bold text-4xl mt-12 md:text-[4rem] 3xl:text-[6rem]">
@@ -170,15 +170,20 @@ export default function Home() {
           </h2>
           <div className="flex flex-wrap items-center md:space-x-2 mt-16 space-y-4 md:space-y-0">
             <Button
+              as={'a'}
               className={'w-full md:w-auto'}
               icon={<Blocks />}
               iconPosition={'right'}
               variant={'outline'}
               size={'large'}
+              href={'#portfolio'}
             >
               Meus Trabalhos
             </Button>
             <Button
+              as={'a'}
+              target={'_blank'}
+              href={`${process.env.NEXT_PUBLIC_BASE_URL}/api/curriculo`}
               variant="ghost"
               icon={<Download />}
               iconPosition={'right'}
@@ -190,7 +195,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Section badge={<Badge text="Portfólio" />} description={'Confira meus projetos em destaque'}>
+      <Section
+        id={'portfolio'}
+        badge={<Badge text="Portfólio" />}
+        description={'Confira meus projetos em destaque'}
+      >
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <ProjectCard
             size={'full'}
@@ -216,6 +225,7 @@ export default function Home() {
       </Section>
 
       <Section
+        id={'sobre-mim'}
         badge={<Badge text="Sobre mim" />}
         description={'Transformando problemas complexos em soluções simples'}
       >
@@ -240,9 +250,18 @@ export default function Home() {
               NestJS para criar back-ends escaláveis e confiáveis. O destino final? Uma experiência
               de usuário clara, eficiente e agradável, onde a complexidade se torna simplicidade.
             </p>
-            <Button className="mt-4" icon={<Download />} iconPosition={'right'}>
-              Download CV
-            </Button>
+            <div className={'flex'}>
+              <Button
+                as={'a'}
+                target={'_blank'}
+                href={`${process.env.NEXT_PUBLIC_BASE_URL}/api/curriculo`}
+                className="mt-4"
+                icon={<Download />}
+                iconPosition={'right'}
+              >
+                Download CV
+              </Button>
+            </div>
           </div>
           <div className="w-full space-y-4 md:w-4/12">
             <div className="flex flex-wrap w-full">
@@ -290,6 +309,7 @@ export default function Home() {
         </div>
       </Section>
       <Section
+        id={'curriculo'}
         badge={<Badge text="Currículo" />}
         description={
           'Minha meta é entregar soluções web completas e de alto desempenho, unindo design e funcionalidade de forma harmoniosa.'
@@ -323,6 +343,7 @@ export default function Home() {
       </Section>
 
       <Section
+        id={'contato'}
         badge={<Badge text="Contato" />}
         description={
           'Tem alguma dúvida ou gostaria de saber mais sobre meus serviços? Entre em contato através do formulário abaixo.'
