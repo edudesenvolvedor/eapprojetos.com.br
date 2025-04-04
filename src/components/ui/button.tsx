@@ -1,10 +1,20 @@
 import { cva, type VariantProps } from 'class-variance-authority';
-import { FC, ButtonHTMLAttributes, ReactNode } from 'react';
+import { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import Link from 'next/link';
 
-interface IProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof style> {
+interface BaseProps extends VariantProps<typeof style> {
+  as?: 'button' | 'a';
+  href?: string;
   icon?: ReactNode;
   iconPosition?: 'left' | 'right';
+  className?: string;
+  target?: string;
 }
+
+type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'>;
+type AnchorProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className'>;
+
+type IProps = BaseProps & (ButtonProps | AnchorProps);
 
 const style = cva('cursor-pointer flex items-center space-x-2 font-semibold justify-center', {
   variants: {
@@ -40,16 +50,31 @@ const style = cva('cursor-pointer flex items-center space-x-2 font-semibold just
 });
 
 export const Button: FC<IProps> = ({
+  as = 'button',
+  href,
   variant,
   size,
   icon,
   iconPosition = 'left',
   className = '',
   children,
+  target,
   ...props
 }: IProps) => {
+  const classes = `${style({ variant, size })} ${className}`;
+
+  if (as === 'a' && href) {
+    return (
+      <Link target={target} href={href} className={classes} {...(props as AnchorProps)}>
+        {icon && iconPosition === 'left' && icon}
+        <span>{children}</span>
+        {icon && iconPosition === 'right' && icon}
+      </Link>
+    );
+  }
+
   return (
-    <button className={`${style({ variant, size })} ${className}`} {...props}>
+    <button className={classes} {...(props as ButtonProps)}>
       {icon && iconPosition === 'left' && icon}
       <span>{children}</span>
       {icon && iconPosition === 'right' && icon}
