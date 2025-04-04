@@ -1,9 +1,11 @@
 import { ReactNode, FC } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import Link from 'next/link';
 
 interface IProps extends VariantProps<typeof style> {
   children?: ReactNode;
   className?: string;
+  href?: string;
 }
 
 const style = cva(
@@ -21,6 +23,15 @@ const style = cva(
   },
 );
 
-export const Navlink: FC<IProps> = ({ children, isActive = false, className }: IProps) => {
-  return <li className={style({ isActive, className })}>{children}</li>;
+export const Navlink: FC<IProps> = ({
+  children,
+  isActive = false,
+  href = '#',
+  className,
+}: IProps) => {
+  return (
+    <li className={style({ isActive, className })}>
+      <Link href={href}>{children}</Link>
+    </li>
+  );
 };
