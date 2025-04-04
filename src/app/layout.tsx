@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import { MessageSquareText, Moon } from 'lucide-react';
+import { Moon } from 'lucide-react';
 import { Navlink } from '@/components/Navbar/navlink';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/Navbar';
 import { AsideAvatar } from '@/components/AsideAvatar';
+import { ChatDots } from '@phosphor-icons/react/dist/ssr/ChatDots';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,31 +30,38 @@ export default function RootLayout({
         />
         <Navbar
           brand={
-            <Link href="/" className="text-gradient font-bold text-2xl md:text-3xl ">
+            <Link href="/#" className="text-gradient font-bold text-2xl md:text-3xl ">
               EAP Projetos
             </Link>
           }
           rightButton={
             <>
-              <Button variant={'glass'} size={'default'} className="">
+              <Button variant={'glass'} size={'default'} className="hidden">
                 <Moon className="group-hover:text-t-bright-light" />
               </Button>
               <Button
+                as={'a'}
+                href={'/#contato'}
                 variant={'primary'}
-                icon={<MessageSquareText />}
+                icon={<ChatDots />}
                 iconPosition={'right'}
                 size={'medium'}
+                className={'mx-auto'}
               >
                 Vamos Conversa
               </Button>
             </>
           }
         >
-          <Navlink isActive>Início</Navlink>
-          <Navlink>Portfólio</Navlink>
-          <Navlink className={'lg:hidden 2xl:block'}>Sobre Mim</Navlink>
-          <Navlink>Currículo</Navlink>
-          <Navlink>Contato</Navlink>
+          <Navlink href={'/#inicio'} isActive>
+            Início
+          </Navlink>
+          <Navlink href={'/#portfolio'}>Portfólio</Navlink>
+          <Navlink href={'/#sobre-mim'} className={'lg:hidden 2xl:block'}>
+            Sobre Mim
+          </Navlink>
+          <Navlink href={'/#curriculo'}>Currículo</Navlink>
+          <Navlink href={'/#contato'}>Contato</Navlink>
         </Navbar>
 
         <div className="px-2 w-full lg:w-8/12 lg:mr-4 ml-auto 2xl:mr-auto xl:px-8 xl:mr-8 2xl:w-auto 2xl:ml-[420px]">

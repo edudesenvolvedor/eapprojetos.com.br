@@ -37,7 +37,7 @@ export const Navbar: FC<IProps> = ({ children, rightButton, brand, isOpen = fals
           <Menu />
         </button>
       </div>
-      <div className={style({ isOpen: open }) + ' mt-18 lg:mt-0 xl:flex w-full xl:justify-end'}>
+      <div className={style({ isOpen: open }) + ' mt-18 xl:mt-0 xl:flex w-full xl:justify-end'}>
         <nav className={'mt-8 px-8 text-center xl:mt-0 xl:p-0'}>
           <ul className={'xl:flex text-xl font-semibold xl:space-x-2'}>{children}</ul>
         </nav>
