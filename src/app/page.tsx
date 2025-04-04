@@ -170,11 +170,13 @@ export default function Home() {
           </h2>
           <div className="flex flex-wrap items-center md:space-x-2 mt-16 space-y-4 md:space-y-0">
             <Button
+              as={'a'}
               className={'w-full md:w-auto'}
               icon={<Blocks />}
               iconPosition={'right'}
               variant={'outline'}
               size={'large'}
+              href={'#portfolio'}
             >
               Meus Trabalhos
             </Button>
@@ -248,9 +250,18 @@ export default function Home() {
               NestJS para criar back-ends escaláveis e confiáveis. O destino final? Uma experiência
               de usuário clara, eficiente e agradável, onde a complexidade se torna simplicidade.
             </p>
-            <Button className="mt-4" icon={<Download />} iconPosition={'right'}>
-              Download CV
-            </Button>
+            <div className={'flex'}>
+              <Button
+                as={'a'}
+                target={'_blank'}
+                href={`${process.env.NEXT_PUBLIC_BASE_URL}/api/curriculo`}
+                className="mt-4"
+                icon={<Download />}
+                iconPosition={'right'}
+              >
+                Download CV
+              </Button>
+            </div>
           </div>
           <div className="w-full space-y-4 md:w-4/12">
             <div className="flex flex-wrap w-full">
