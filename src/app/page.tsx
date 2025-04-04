@@ -89,38 +89,72 @@ export default function Home() {
     },
   ];
 
-  const tools = [
+  const programmingLanguages = [
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'Typescript',
+      icon: 'https://www.svgrepo.com/show/354478/typescript-icon.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'Javascript',
+      icon: 'https://www.svgrepo.com/show/353925/javascript.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'PHP',
+      icon: 'https://www.svgrepo.com/show/349474/php.svg',
+    },
+  ];
+
+  const frameworks = [
+    {
+      name: 'NestJS',
+      icon: 'https://www.svgrepo.com/show/373872/nestjs.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'Express',
+      icon: 'https://www.svgrepo.com/show/330398/express.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'NextJS',
+      icon: 'https://www.svgrepo.com/show/378440/nextjs-fill.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'Laravel',
+      icon: 'https://www.svgrepo.com/show/353985/laravel.svg',
+    },
+  ];
+
+  const libs = [
+    {
+      name: 'ReactJS',
+      icon: 'https://www.svgrepo.com/show/452092/react.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'TypeORM',
+      icon: 'https://cdn.svgporn.com/logos/typeorm.svg',
     },
     {
-      name: 'Photoshop',
-      icon: 'https://mixdesign.club/themeforest/braxton/img/icons/icon-photoshop.svg',
+      name: 'Prisma',
+      icon: 'https://www.svgrepo.com/show/354210/prisma.svg',
+    },
+    {
+      name: 'Mongodb',
+      icon: 'https://www.svgrepo.com/show/373845/mongo.svg',
+    },
+    {
+      name: 'Mysql',
+      icon: 'https://www.svgrepo.com/show/342053/mysql.svg',
+    },
+    {
+      name: 'Postgresql',
+      icon: 'https://www.svgrepo.com/show/303301/postgresql-logo.svg',
+    },
+    {
+      name: 'Styled Components',
+      icon: 'https://www.svgrepo.com/show/374104/styled.svg',
+    },
+    {
+      name: 'Tailwind',
+      icon: 'https://www.svgrepo.com/show/374118/tailwind.svg',
     },
   ];
 
@@ -271,9 +305,19 @@ export default function Home() {
             <Milestone key={index} {...work} />
           ))}
         </Timeline>
-        <GridDisplay title={'Minhas Ferramentas'} columns={'six'}>
-          {tools.map((tool, index) => (
-            <ToolCard key={index} name={tool.name} icon={tool.icon} />
+        <GridDisplay title={'Linguagens'} columns={'six'}>
+          {programmingLanguages.map((language, index) => (
+            <ToolCard key={index} {...language} />
+          ))}
+        </GridDisplay>
+        <GridDisplay title={'Frameworks'} columns={'six'}>
+          {frameworks.map((framework, index) => (
+            <ToolCard key={index} {...framework} />
+          ))}
+        </GridDisplay>
+        <GridDisplay title={'Bibliotecas'} columns={'six'}>
+          {libs.map((lib, index) => (
+            <ToolCard key={index} {...lib} />
           ))}
         </GridDisplay>
       </Section>
