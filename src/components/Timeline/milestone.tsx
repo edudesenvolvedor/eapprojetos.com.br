@@ -37,7 +37,7 @@ export const Milestone: FC<IProps> = ({
       <div className="text-lg text-t-muted-light font-semibold w-full md:max-w-2/12">{year}</div>
       <div className="flex flex-col w-full py-5">
         <span className="font-bold">{title}</span>
-        <span className="text-sm text-gray-500">{institution}</span>
+        <span className="text-sm text-gray-500">{label}</span>
       </div>
       <p className="text-sm mt-2 w-full md:max-w-4/12">{description}</p>
     </div>
