@@ -13,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
     "class-variance-authority": "^0.7.1",
     "lucide-react": "^0.486.0",
     "motion": "^12.6.2",
